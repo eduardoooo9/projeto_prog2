@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Loja de Móveis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à Loja de Móveis!</h1>
+        <p>Este é o painel de controle da nossa loja de móveis.</p>
+        
+        <div class="links">
+            <a href="/moveis">Ver Móveis</a>
+            <a href="/moveis/novo">Cadastrar Novo Móvel</a>
+        </div>
+        
+        <h2>Resumo:</h2>
+        <ul>
+            <li>Total de móveis: <span th:text="${moveis.size()}"></span></li>
+            <li>Últimos móveis cadastrados: 
+                <ul>
+                    <li th:each="movel : ${moveis}" th:text="${movel.nome}"></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

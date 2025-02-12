@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Móveis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Móveis</h1>
+        <a href="/moveis/novo">Cadastrar Novo Móvel</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="movel : ${moveis}">
+                    <td th:text="${movel.nome}"></td>
+                    <td th:text="${movel.descricao}"></td>
+                    <td th:text="${movel.preco}"></td>
+                    <td>
+                        <a th:href="@{/moveis/editar/{id}(id=${movel.id})}">Editar</a>
+                        <a th:href="@{/moveis/deletar/{id}(id=${movel.id})}">Deletar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
