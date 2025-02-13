@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de Material</title>
+</head>
+<body>
+    <h1>Cadastro de Material</h1>
+    <form action="/cadastro-material" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        <button type="submit">Cadastrar Material</button>
+    </form>
+    <a href="/materiais">Voltar para a lista de materiais</a>
+</body>
+</html>

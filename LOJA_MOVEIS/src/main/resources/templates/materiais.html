@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Materiais</title>
+</head>
+<body>
+    <h1>Lista de Materiais</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        <th:block th:each="material : ${materiais}">
+            <tr>
+                <td th:text="${material.id}"></td>
+                <td th:text="${material.nome}"></td>
+                <td>
+                    <a th:href="@{/editar-material/{id}(id=${material.id})}">Editar</a> |
+                    <a th:href="@{/excluir-material/{id}(id=${material.id})}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+    <a href="/cadastro-material">Adicionar Novo Material</a>
+</body>
+</html>

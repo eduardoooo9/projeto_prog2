@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Material</title>
+</head>
+<body>
+    <h1>Editar Material</h1>
+    <form action="/editar-material/{id}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" th:value="${material.nome}" required><br>
+        <button type="submit">Atualizar Material</button>
+    </form>
+    <a href="/materiais">Voltar para a lista de materiais</a>
+</body>
+</html>
